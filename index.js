@@ -1,12 +1,22 @@
 
 const secondHand = document.querySelector('.second-hand');
 
-function setDate() {
+function setSecond() {
   const now = new Date();
   const second = now.getSeconds();
   const secondDegrees = ((second / 60) * 360 ) +90;
   secondHand.style.transform = `rotate(${secondDegrees}deg)`;
-  console.log(second);
+  console.log("Second: ", second);
+}
+setInterval(setSecond,1000);
+
+const minuteHand = document.querySelector('.min-hand')
+function setMinute() {
+  const now = new Date();
+  const minute = now.getSeconds();
+  const minuteDegrees = ((minute / 60) * 360 ) +90;
+  minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+  console.log("Minute: ", minute);
 }
 
-setInterval(setDate,1000);
+setInterval(setMinute,60000);
